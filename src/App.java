@@ -6,15 +6,9 @@
 
 */
 
-
-
-
 //Imports
 import java.util.Random;
 import java.util.Scanner; 
-
-
-
 
 public class App {
 
@@ -46,8 +40,6 @@ public class App {
         }while(!b);
     }
 
-
-
     /*
         Name: intro
         parameters: none
@@ -56,15 +48,17 @@ public class App {
         generates a welcome message for the user.
     */
     public static void hello() {
-        String i = " Willkommen ! \n"
-                    + " Errate eine Zahl zwischen 0 und 9999 \n"
-                    + " 0 ist inklusive, 9999 ist  exklusiv \n"
-                    + " nur positive ganze Zahlen erlaubt ! \n";
+        String i =  """
+                    Willkommen ! \n
+                    Errate eine Zahl zwischen 0 und 9999 \n
+                    0 ist inklusive, 9999 ist  exklusiv \n
+                    nur positive ganze Zahlen erlaubt ! \n
+                    """;
+
 
         System.out.println(i);
         
     }
-
 
     /*
         Name: number
@@ -81,7 +75,5 @@ public class App {
         int high = 9999;
         return r.nextInt(high-low) + low;
     }
-
-
 
 }
