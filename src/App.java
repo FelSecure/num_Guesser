@@ -27,26 +27,23 @@ public class App {
         int compare = number(); // generate random number
         int upper = 9999;
         int lower = 0;
-        int i = scan.nextInt(); // scan user input via scanner object (int)
         // main program loop
-        if (i < lower){
-            throw new ArithmeticException(" Deine Eingabe liegt unter dem zugelassenen Bereich !");
-        }else if (i >= upper){
-            throw new ArithmeticException(" Deine Eingabe liegt über dem zugelassenen Bereich !");
-        }else{
-            do{
-                i = scan.nextInt(); // scan user input via scanner object (int)
-                // if-else block to compare random number and user input
-                if(i == compare){
-                    System.out.println("Du hast die richtige Nummer erraten !");
-                    b = true;
-                }else if (i < compare){
-                    System.out.println("Deine Nummer ist zu klein !");
-                }else{
-                    System.out.println("Deine Nummer ist zu groß !");
-                }
-            }while(!b);
-        }
+        do{
+            int i = scan.nextInt(); // scan user input via scanner object (int)
+            // if-else block to compare random number and user input
+            if(i == compare){
+                System.out.println("Du hast die richtige Nummer erraten !");
+                b = true;
+            }else if (i < lower){
+                throw new ArithmeticException(" Deine Eingabe liegt unter dem zugelassenen Bereich !");
+            }else if (i >= upper){
+                throw new ArithmeticException(" Deine Eingabe liegt über dem zugelassenen Bereich !");
+            }else if (i < compare){
+                System.out.println("Deine Nummer ist zu klein !");
+            }else{
+                System.out.println("Deine Nummer ist zu groß !");
+            }
+        }while(!b);
     }
 
     /*
