@@ -20,11 +20,13 @@ public class App {
         description:
         main program
     */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         hello(); // intro message
         Scanner scan = new Scanner(System.in); // set up scanner object
         boolean b = false; // flag to exit the game
         int compare = number(); // generate random number
+        int upper = 9999;
+        int lower = 0;
         // main program loop
         do{
             int i = scan.nextInt(); // scan user input via scanner object (int)
@@ -32,6 +34,10 @@ public class App {
             if(i == compare){
                 System.out.println("Du hast die richtige Nummer erraten !");
                 b = true;
+            }else if (i < lower){
+                throw new ArithmeticException(" Deine Eingabe liegt unter dem zugelassenen Bereich !");
+            }else if (i >= upper){
+                throw new ArithmeticException(" Deine Eingabe liegt über dem zugelassenen Bereich !");
             }else if (i < compare){
                 System.out.println("Deine Nummer ist zu klein !");
             }else{
