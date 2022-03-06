@@ -26,12 +26,12 @@ public class App {
     public static void main(String[] args) throws Exception {
         hello(); // intro message
         Scanner scan = new Scanner(System.in); // set up scanner object
-        Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-        log.setLevel(Level.ALL);
-        Handler handler = new ConsoleHandler();
-        handler.setLevel(Level.ALL);
-        log.addHandler(handler);
-        log.setUseParentHandlers(false);
+        Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); // create global logger object
+        log.setLevel(Level.ALL); // log all levels that are available
+        Handler handler = new ConsoleHandler(); // create a handler object
+        handler.setLevel(Level.ALL); // handle all levels that are available
+        log.addHandler(handler); // add handler to logger
+        log.setUseParentHandlers(false); // deactivate parent dependency
         boolean b = false; // flag to exit the game
         int compare = number(); // generate random number
         int upper = 9999;
