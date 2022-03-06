@@ -7,4 +7,4 @@
 -> only positive integer
 -> in this version its hard coded from including 0,excluding 9999
 -> if you are guessing correctly the program is finished
--> no error detection, unkown what is happening !
+-> error detection could give you hints on what is not working !
