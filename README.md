@@ -14,9 +14,9 @@
 
 Compile with:
  
- javac App.java
+ `javac App.java`
  
 
 Start with:
  
- java App
+ `java App`
