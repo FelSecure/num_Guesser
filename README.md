@@ -10,7 +10,7 @@
 4. error detection could give you hints on what is not working !
 
 
-###How to Compile and Use
+### How to Compile and Use
 
 Compile with:
  
