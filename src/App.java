@@ -36,6 +36,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         hello(); // intro message
         Scanner scan = new Scanner(System.in); // set up scanner object
+        System.out.println("Enter upper boundary: ");
+        int u = scan.nextInt();
+        System.out.println("Enter lower boundary: ");
+        int l = scan.nextInt();
         App start = new App(u,l);
         Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); // create global logger object
         log.setLevel(Level.ALL); // log all levels that are available
@@ -43,16 +47,6 @@ public class App {
         handler.setLevel(Level.ALL); // handle all levels that are available
         log.addHandler(handler); // add handler to logger
         log.setUseParentHandlers(false); // deactivate parent dependency
-        // catching a input error
-        try {
-            System.out.println("Enter upper boundary: ");
-            int u = scan.nextInt();
-            System.out.println("Enter lower boundary: ");
-            int l = scan.nextInt();
-        } catch (Exception e) {
-            //handling of exception
-            log.warning("Wrong input oopsie..");
-        }
         boolean b = false; // flag to exit the game
         int compare = number(l, u); // generate random number
         // main program loop
