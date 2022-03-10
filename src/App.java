@@ -48,7 +48,7 @@ public class App {
         log.addHandler(handler); // add handler to logger
         log.setUseParentHandlers(false); // deactivate parent dependency
         boolean b = false; // flag to exit the game
-        int compare = number(); // generate random number
+        int compare = number(l, u); // generate random number
         // main program loop
         do {
             System.out.println("Enter a number: ");
@@ -100,11 +100,11 @@ public class App {
      * generates a random number between high and low,
      * excludes high value and includes low value
      */
-    public static int number() {
+    public static int number(int l, int h) {
 
         Random r = new Random();
-        int low = 0;
-        int high = 9999;
+        int low = l;
+        int high = h;
         return r.nextInt(high - low) + low;
     }
 
