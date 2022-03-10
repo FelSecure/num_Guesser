@@ -41,16 +41,16 @@ public class App {
             int i = scan.nextInt(); // scan user input via scanner object (int)
             // if-else block to compare random number and user input
             if (i == compare) {
-                log.finest("Du hast die richtige Nummer erraten !");
+                log.finest("You found the correct number !");
                 b = true;
             } else if (i < lower) {
-                throw new IllegalArgumentException(" Deine Eingabe liegt unter dem zugelassenen Bereich !");
+                throw new IllegalArgumentException(" Your input is below the allowed range  !");
             } else if (i >= upper) {
-                throw new IllegalArgumentException(" Deine Eingabe liegt über dem zugelassenen Bereich !");
+                throw new IllegalArgumentException(" Your input is above the allowed range !");
             } else if (i < compare) {
-                log.warning("Deine Nummer ist zu klein !");
+                log.warning("Your number is too small !");
             } else {
-                log.warning("Deine Nummer ist zu groß !");
+                log.warning("Your number is too big !");
             }
         } while (!b);
 
@@ -66,10 +66,10 @@ public class App {
      */
     public static void hello() {
         String i = """
-                Willkommen ! \n
-                Errate eine Zahl zwischen 0 und 9999 \n
-                0 ist inklusive, 9999 ist  exklusiv \n
-                nur positive ganze Zahlen erlaubt ! \n
+                Welcome ! \n
+                Guess a number between 0 and 9999  \n
+                0 is inclusive, 9999 is exclusive \n
+                only positive integers allowed ! \n
                 """;
 
         System.out.println(i);
