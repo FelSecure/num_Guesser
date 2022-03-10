@@ -5,7 +5,7 @@
 ## Rules
 
 1. only positive integer
-2. in this version its hard coded from including 0,excluding 9999
+2. dynamic boundaries will be set at the beginning
 3. if you are guessing correctly the program is finished
 4. error detection could give you hints on what is not working !
 
