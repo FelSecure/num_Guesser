@@ -34,9 +34,13 @@ public class App {
      * main program
      */
     public static void main(String[] args) throws Exception {
-        App start = new App(9999,0);
         hello(); // intro message
         Scanner scan = new Scanner(System.in); // set up scanner object
+        System.out.println("Enter upper boundary: ");
+        int u = scan.nextInt();
+        System.out.println("Enter lower boundary: ");
+        int l = scan.nextInt();
+        App start = new App(u,l);
         Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); // create global logger object
         log.setLevel(Level.ALL); // log all levels that are available
         Handler handler = new ConsoleHandler(); // create a handler object
@@ -44,13 +48,15 @@ public class App {
         log.addHandler(handler); // add handler to logger
         log.setUseParentHandlers(false); // deactivate parent dependency
         boolean b = false; // flag to exit the game
-        int compare = number(); // generate random number
+        int compare = number(l, u); // generate random number
         // main program loop
         do {
+            System.out.println("Enter a number: ");
             int i = scan.nextInt(); // scan user input via scanner object (int)
             // if-else block to compare random number and user input
             if (i == compare) {
                 log.finest("You found the correct number !");
+                scan.close();
                 b = true;
             } else if (i < start.lower) {
                 throw new IllegalArgumentException(" Your input is below the allowed range  !");
@@ -76,8 +82,9 @@ public class App {
     public static void hello() {
         String i = """
                 Welcome ! \n
-                Guess a number between 0 and 9999  \n
-                0 is inclusive, 9999 is exclusive \n
+                Enter a number for your upper boundary,  \n
+                Enter a number for your lower boundary,  \n
+                lower is inclusive, upper is exclusive \n
                 only positive integers allowed ! \n
                 """;
 
@@ -93,11 +100,11 @@ public class App {
      * generates a random number between high and low,
      * excludes high value and includes low value
      */
-    public static int number() {
+    public static int number(int l, int h) {
 
         Random r = new Random();
-        int low = 0;
-        int high = 9999;
+        int low = l;
+        int high = h;
         return r.nextInt(high - low) + low;
     }
 
