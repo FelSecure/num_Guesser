@@ -16,6 +16,16 @@ import java.util.logging.Logger;
 
 public class App {
 
+
+    int upper;
+    int lower;
+
+    public App(int up, int low){
+        upper = up;
+        lower = low;
+    }
+
+
     /*
      * Name: main
      * parameters: args type: String[]
@@ -24,6 +34,7 @@ public class App {
      * main program
      */
     public static void main(String[] args) throws Exception {
+        App start = new App(9999,0);
         hello(); // intro message
         Scanner scan = new Scanner(System.in); // set up scanner object
         Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); // create global logger object
@@ -34,8 +45,6 @@ public class App {
         log.setUseParentHandlers(false); // deactivate parent dependency
         boolean b = false; // flag to exit the game
         int compare = number(); // generate random number
-        int upper = 9999;
-        int lower = 0;
         // main program loop
         do {
             int i = scan.nextInt(); // scan user input via scanner object (int)
@@ -43,9 +52,9 @@ public class App {
             if (i == compare) {
                 log.finest("You found the correct number !");
                 b = true;
-            } else if (i < lower) {
+            } else if (i < start.lower) {
                 throw new IllegalArgumentException(" Your input is below the allowed range  !");
-            } else if (i >= upper) {
+            } else if (i >= start.upper) {
                 throw new IllegalArgumentException(" Your input is above the allowed range !");
             } else if (i < compare) {
                 log.warning("Your number is too small !");
